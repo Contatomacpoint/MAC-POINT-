@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <t>MAC POINT</title>
+    <meta name="description" content="Mac Point - Ferramentas de simulação, dicas, planilhas e estratégias para aumentar suas chances em loterias brasileiras como Mega-Sena, Quina e Lotofácil.">
+
+    <style>
+        /* Estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Cabeçalho com imagem de capa */
+        header {
+            background: url('https://i.postimg.cc/x1bVRnMW/Screenshot-20241021-134406-1-1.jpg') no-repeat center/cover;
+            height: 400px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        header h1, header p {
+            background: rgba(1, 50, 32, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* Navegação */
+        nav {
+            background-color: #000;
+            padding: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            background-color: orange;
+            color: black ;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #00ff00;
+            color: black;
+        }
+
+        /* Seção de Dicas */
+        #dicas {
+            background-color: #013220;
+            color: white;
+            padding: 50px 20px;
+            max-width: 1000px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Simuladores */
+        #simuladores {
+            background-color: #000;
+            color: white;
+            padding: 50px 20px;
+            max-width: 1000px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .simulator-container {
+            background-color: #013220;
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin: 20px 0;
+            color: white;
+        }
+
+        /* Botões */
+        .simulator-container button {
+            background-color: orange ;
+            color: black ;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .simulator-container button:hover {
+            background-color: #00ff00;
+            color: black;
+        }
+
+        /* Quadro de Incentivo */
+        .promo-container {
+            background-color: #013220;
+            color: white;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .promo-container p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .promo-container a {
+            display: inline-block;
+            background-color: green ;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .promo-container a:hover {
+            background-color: #ffcc00;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>Bem-vindo ao MAC POINT</h1>
+            <p>Simuladores, dicas e ferramentas para LOTERIAS BRASILEIRAS</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">INÍCIO</a></li>
+            <li><a href="#dicas">DICAS </a></li>
+            <li><a href="#simuladores">SIMULADOR</a></li>
+            <li><a href="https://chat.whatsapp.com/L6HjeP0MJPpIXNQwxQgn3R" target="_blank">CONTATO </a></li>
+        </ul>
+    </nav>
+
+    <section id="dicas">
+        <h2>DICAS</h2>
+        <p>Aumente suas chances com nossas dicas exclusivas para diferentes modalidades de loterias brasileiras. Aprenda estratégias para Mega-Sena, Quina, Lotofácil e muito mais!</p>
+    </section>
+
+    <section id="simuladores">
+        <h2>SIMULADORES </h2>
+
+        <div class="simulator-container">
+            <h3>MEGA-SENA</h3>
+            <button onclick="generateNumbers('mega', 6, 60)">Gerar Números</button>
+            <div class="result" id="result-mega"></div>
+        </div>
+
+        <div class="simulator-container">
+            <h3>QUINA</h3>
+            <button onclick="generateNumbers('quina', 5, 80)">Gerar Números</button>
+            <div class="result" id="result-quina"></div>
+        </div>
+
+        <div class="simulator-container">
+            <h3>LOTOFÁCIL</h3>
+            <button onclick="generateNumbers('lotofacil', 15, 25)">Gerar Números</button>
+            <div class="result" id="result-lotofacil"></div>
+        </div>
+
+        <div class="simulator-container">
+            <h3>LOTOMANIA</h3>
+            <button onclick="generateNumbers('lotomania', 50, 100)">Gerar Números</button>
+            <div class="result" id="result-lotomania"></div></div>
+    <!-- Quadro de Incentivo -->
+    <div class="promotion-container">
+        <h3><img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp"> PLANILHAS e E-BOOKS EXCLUSIVOS PARA AUMENTAR  SUAS CHANCES</h3>
+        <p>Adquira nossas planilhas automatizadas e livros com estratégias avançadas para aumentar suas chances na loteria. Conteúdo exclusivo de alta qualidade!</p>
+        <a href="https://chat.whatsapp.com/L6HjeP0MJPpIXNQwxQgn3R" target="_blank">Fale conosco</a>
+    </div>
+
+   
+
+    <footer>
+        <p>&copy; 2024 Mac Point. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function generateNumbers(modality, count, max) {
+            let result = document.getElementById(`result-${modality}`);
+            let numbers = [];
+
+            while (numbers.length < count) {
+                let num = Math.floor(Math.random() * max) + 1;
+                if (!numbers.includes(num)) numbers.push(num);
+            }
+
+            result.innerHTML = `Números Gerados: ${numbers.join(', ')}`;
+        }
+    </script>
+</body>
+</html>
+
+
+
+ 
+
+       
+        
+        
+         
+            
+            
+            
+
+        
+         
+
+    
+
+         
